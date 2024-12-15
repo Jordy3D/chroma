@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chroma</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="controls">
+            <div class="top-container">
+                <a href="https://jordy3d.github.io/tree/" class="bane-logo" target="_blank">
+                    <img src="images/bane.png" alt="Bane Logo">
+                </a>
+                <div class="file-input-container" data-tooltip="Upload an image to recolour">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <label for="imageInput">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z"
+                                fill="currentColor" />
+                        </svg>
+                        <span id="fileNameDisplay">Choose Image</span>
+                    </label>
+                </div>
+            </div>
+            <div class="toggles">
+                <div class="toggle-container" data-tooltip="Toggle whether the image is pixelated or not">
+                    <label>Pixelated</label>
+                    <div class="toggle">
+                        <input type="checkbox" id="pixelated">
+                        <label for="pixelated"></label>
+                    </div>
+                </div>
+                <div class="toggle-container" data-tooltip="Toggle dark mode">
+                    <label>Dark Mode</label>
+                    <div class="toggle">
+                        <input type="checkbox" id="darkMode">
+                        <label for="darkMode"></label>
+                    </div>
+                </div>
+                <div class="toggle-container"
+                    data-tooltip="Use a slightly darker version of the &#10; primary colour as the secondary colour">
+                    <label>Multiplier Mode</label>
+                    <div class="toggle">
+                        <input type="checkbox" id="multiplierMode">
+                        <label for="multiplierMode"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-container-container">
+                <div class="slider-container" data-tooltip="Adjust the colour sensitivity">
+                    <label for="colourSensitivity">Colour Sensitivity</label>
+                    <input type="range" id="colourSensitivity" min="0" max="254" value="50">
+                </div>
+                <div class="slider-container" data-tooltip="Adjust the image size">
+                    <label for="imageSize">Image Size</label>
+                    <input type="range" id="imageSize" min="10" max="2000" value="200">
+                </div>
+            </div>
+            <div class="colour-container-container">
+                <div class="colour-options">
+                    <h3 data-tooltip="Define target colours in the image">Target Colours</h3>
+                    <div class="colour-container">
+                        <div class="colour-option">
+                            <label for="targetColour1" hidden>Primary</label>
+                            <input type="color" id="targetColour1" value="#ff0000" data-tooltip="Primary Colour">
+                        </div>
+                        <div class="colour-option">
+                            <label for="targetColour2" hidden>Secondary</label>
+                            <input type="color" id="targetColour2" value="#00ff00" data-tooltip="Secondary Colour">
+                        </div>
+                        <div class="colour-option">
+                            <label for="targetColour3" hidden>Accent</label>
+                            <input type="color" id="targetColour3" value="#0000ff" data-tooltip="Accent Colour">
+                        </div>
+                    </div>
+                </div>
+                <div class="colour-options">
+                    <h3 data-tooltip="Define new colours to replace the target colours">New Colours</h3>
+                    <div class="colour-container">
+                        <div class="colour-option">
+                            <label for="colour1" hidden>Primary</label>
+                            <input type="color" id="colour1" value="#ff0000" data-tooltip="Primary Colour">
+                        </div>
+                        <div class="colour-option">
+                            <label for="colour2" hidden>Secondary</label>
+                            <input type="color" id="colour2" value="#00ff00" data-tooltip="Secondary Colour">
+                        </div>
+                        <div class="colour-option">
+                            <label for="colour3" hidden>Accent</label>
+                            <input type="color" id="colour3" value="#0000ff" data-tooltip="Accent Colour">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidebar" id="hidebar" data-tooltip="Hide Controls">
+                <!-- ≡ -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </div>
+        </div>
+        <div id="previewContainer"></div>
+        <div class="context-menu">
+            <div class="menu-item" id="pasteImage">Paste Image</div>
+        </div>
+    </main>
+</body>
+
+</html>
