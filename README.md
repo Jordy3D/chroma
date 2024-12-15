@@ -1,6 +1,6 @@
 <div align="center">
   <h1>chroma</h1>
-  <img src="https://github.com/Jordy3D/chroma/blob/main/assets/favicon.png" height=100>
+  <img src="https://github.com/Jordy3D/chroma/blob/main/images/favicon.png" height=100>
   <p>add an image. replace the colours.</p>
 </div>
 
